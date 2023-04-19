@@ -6,10 +6,38 @@ import HeroCarousel from "../Components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../Components/PosterSlider/PosterSlider.Component";
 import EntertainmentCard from "../Components/Entertainment/EntertainmentCard.Component";
 
+//import axios from "axios";
+
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [premierMovies, setpremierMovies] = useState([]);
   const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+
+  /*
+useEffect(()=>{
+  const requestPopularMovies = async () =>{
+  const getPopularMovies = await axios.get("/movie/popular");
+  setRecommendedMovies(getPopularMovies.data.results);
+};
+requestPopularMovies();
+},[]);
+
+useEffect(()=>{
+  const requestTopratedMovies = async () =>{
+  const getTopratedMovies = await axios.get("/movie/top_rated");
+  setpremierMovies(getTopratedMovies.data.results);
+};
+requestTopratedMovies();
+},[]);
+
+useEffect(()=>{
+  const requestUpcomingMovies = async () =>{
+  const getUpcomingMovies = await axios.get("/movie/upcoming");
+  setonlineStreamEvents(getUpcomingMovies.data.results);
+};
+requestUpcomingMovies();
+},[]);
+*/
 
   return (
     <>
@@ -32,16 +60,21 @@ const HomePage = () => {
 
       <div className="bg-premier-800 py-12">
         <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
-          <div className="hidden ms:flex">
-            //try for img remove hidden
-            <img src="" alt="Rupay" className="w-full h-full" />
+          <div className="hidden md:flex">
+            <img
+              src="https://in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-rupay-banner-web-collection-202104230555.png"
+              alt="Rupay"
+              className="w-full h-full"
+            />
           </div>
-          <PosterSlider
-            title="Premiers"
-            subject="Brand new release every Friday"
-            posters={premierMovies}
-            isDark={true}
-          />
+          <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
+            <PosterSlider
+              title="Premiers"
+              subject="Brand new release every Friday"
+              posters={premierMovies}
+              isDark={true}
+            />
+          </div>
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
@@ -57,31 +90,3 @@ const HomePage = () => {
 };
 
 export default DefaultLayoutHoc(HomePage);
-
-/*
-import React, {useState} from 'react'
-
-// Components
-import EntertainmentCard from '../components/Entertainment/EntertainmentCard.Component'
-import HeroCarousel from '../components/HeroCarousel/HeroCarousel.Component'
-import PosterSlider from '../components/PosterSlider/PosterSlider.Component'
-
-// Layout Hoc
-import DefaultLayoutHoc from '../layout/Default.layout'
-
-
-const HomePage = () => {
-
-    const [recommendedMovies, setRecommendedMovies] = useState([])
-    const [premierMovies, setpremierMovies] = useState([])
-    const [onlineStreamEvents, setonlineStreamEvents] = useState([])
-
-  return (
-    <>
-    <HeroCarousel />
-    </>
-  )
-}
-
-export default DefaultLayoutHoc(HomePage)
-*/

@@ -61,7 +61,7 @@ const settings ={
          {posters.map((each,index)=>(
              <Poster {...each} isDark={isDark} key={index}/>
              ))}
-         {/* <Poster /> */}
+         {/* <Poster /> */
   /*
          </Slider>
        )}
@@ -71,7 +71,7 @@ const settings ={
          {posters.map((each,index)=>(
              <Poster {...each} isDark={isDark} key={index}/>
              ))}
-         {/* <Poster /> */}
+         {/* <Poster /> */
      /*
          </Slider>
        )}

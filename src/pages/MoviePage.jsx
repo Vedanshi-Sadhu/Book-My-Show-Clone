@@ -180,8 +180,9 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* Cast Slider */}
-  /*      <div className="my-8">
+        {/* Cast Slider */
+
+/*      <div className="my-8">
           <h2 className="text-gray-800 font-bold text-2xl mb-4">
             Cast and Crew
           </h2>
@@ -200,8 +201,8 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */}
-  /*      <div className="my-8">
+        {/* recommended movies slider */
+/*      <div className="my-8">
           <PosterSlider
             config={settings}
             title="Recommended Movies"
@@ -214,8 +215,8 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */}
-  /*      <PosterSlider
+        {/* recommended movies slider */
+/*      <PosterSlider
           config={settings}
           title="BMS XCLUSICE"
           posters={recommendedMovies}

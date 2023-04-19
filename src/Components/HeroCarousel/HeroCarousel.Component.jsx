@@ -43,15 +43,15 @@ const HeroCarousel = () => {
   const settingsLG = {
     arrows: true,
     slidesToShow: 1,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
+    infinite: true, //loop
+    speed: 500, //of movement
+    slideToScroll: 1, //slideToScroll
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    //speed: 2000,
+    //autoplaySpeed: 2000,
+    //cssEase: "linear",
   };
 
   const settings = {
@@ -59,13 +59,13 @@ const HeroCarousel = () => {
     slidesToShow: 1,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slideToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    //speed: 2000,
+    //autoplaySpeed: 2000,
+    //cssEase: "linear",
   };
 
   return (
@@ -100,33 +100,4 @@ const HeroCarousel = () => {
   );
 };
 
-/*
-import React, { useState } from "react";
-import HeroSlider from "react-slick";
-
-const HeroCarousel = () => {
-  const [images, setImages] = useState([
-    //img
-    [{}],
-  ]);
-  return (
-    <>
-      <div clasName="lg:hidden">
-        <HeroSlider />
-        {images.map((image) => {
-          <div className="w-full h-56 md:h-80 py-3">
-            <img
-              src=""
-              alt="Hero banner"
-              className="w-full h-full rounded-md object-cover"
-            />
-          </div>;
-        })}
-      </div>
-    </>
-  );
-  return <div>HeroCarousel</div>;
-};
-
 export default HeroCarousel;
-*/

@@ -41,8 +41,9 @@ const HeroCarousel = () => {
   ]);
 
   const settingsLG = {
+    dots: true,
     arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     infinite: true, //loop
     speed: 500, //of movement
     slideToScroll: 1, //slideToScroll
@@ -50,13 +51,14 @@ const HeroCarousel = () => {
     prevArrow: <PrevArrow />,
     autoplay: true,
     //speed: 2000,
-    //autoplaySpeed: 2000,
-    //cssEase: "linear",
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   const settings = {
+    dots: true,
     arrows: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     infinite: true,
     speed: 500,
     slideToScroll: 1,
@@ -64,8 +66,8 @@ const HeroCarousel = () => {
     prevArrow: <PrevArrow />,
     autoplay: true,
     //speed: 2000,
-    //autoplaySpeed: 2000,
-    //cssEase: "linear",
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   return (

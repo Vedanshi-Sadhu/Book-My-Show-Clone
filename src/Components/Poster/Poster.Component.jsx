@@ -1,3 +1,13 @@
+import React from 'react'
+
+const Poster = () => {
+  return (
+    <div>Poster</div>
+  )
+}
+
+export default Poster
+
 /*
 import React from "react";
 import {Link} from "react-router-dom";
@@ -14,7 +24,7 @@ const Poster = (props) =>{
             <h3 className={`text-sm ${props.isDark? "text-white" : "text-gray-700" }
             `}>{props.title}</h3>
             {/* <p className={`text-lg font-bold ${props.isDark? "text-white" : "text-gray-700" }
-            `}>{props.subtitle}</p> */}
+            `}>{props.subtitle}</p> */
  /*       </div>
     </Link>;
 };

@@ -7,7 +7,7 @@ function NavSm() {
       <div className="text-white flex items-center justify-between">
         <div>
           <h1 className="text-xl font-bold">It all Starts Here!</h1>
-          <span className="text-gray-400 text-xs flex item-center cursor-pointer hover: text-white">
+          <span className="text-gray-400 text-xs flex item-center cursor-pointer hover:text-white">
             Bangalore
           </span>
         </div>
@@ -83,10 +83,12 @@ const Navbar = () => {
   return (
     <nav className="bg-darkBackground-700 px-4 py-3">
       <div className="md:hidden">
-        <NavSm />
+        {/*md-mediumscreensize */}
+        <NavSm /> 
       </div>
 
       <div className="hidden md:flex lg:hidden">
+        {/*here only visible for md .e flex,hidden for sm lg */}
         <NavMd />
       </div>
 

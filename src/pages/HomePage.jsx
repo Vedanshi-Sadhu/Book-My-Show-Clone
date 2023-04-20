@@ -13,6 +13,7 @@ const HomePage = () => {
   const [premierMovies, setpremierMovies] = useState([]);
   const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
 
+  /*
   useEffect(() => {
     const requestPopularMovies = async () => {
       const getPopularMovies = await axios.get(
@@ -42,35 +43,38 @@ const HomePage = () => {
     };
     requestUpcomingMovies();
   }, []);
-
+*/
   //api.themoviedb.org/3/movie/popular?api_key=8cc3917723a701c28dba34183506b4f5
 
-  /*
-useEffect(()=>{
-  const requestPopularMovies = async () =>{
-  const getPopularMovies = await axios.get("/movie/popular");
-  setRecommendedMovies(getPopularMovies.data.results);
-};
-requestPopularMovies();
-},[]);
+  useEffect(() => {
+    const requestPopularMovies = async () => {
+      const getPopularMovies = await axios.get(
+        "/movie/popular"
+      );
+      setRecommendedMovies(getPopularMovies.data.results);
+    };
+    requestPopularMovies();
+  }, []);
 
-useEffect(()=>{
-  const requestTopratedMovies = async () =>{
-  const getTopratedMovies = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=8cc3917723a701c28dba34183506b4f5");
-  setpremierMovies(getTopratedMovies.data.results);
-};
-requestTopratedMovies();
-},[]);
+  useEffect(() => {
+    const requestTopratedMovies = async () => {
+      const getTopratedMovies = await axios.get(
+        "/movie/top_rated"
+      );
+      setpremierMovies(getTopratedMovies.data.results);
+    };
+    requestTopratedMovies();
+  }, []);
 
-useEffect(()=>{
-  const requestUpcomingMovies = async () =>{
-  const getUpcomingMovies = await axios.get("/movie/upcoming");
-  setonlineStreamEvents(getUpcomingMovies.data.results);
-};
-requestUpcomingMovies();
-},[]);
-*/
-
+  useEffect(() => {
+    const requestUpcomingMovies = async () => {
+      const getUpcomingMovies = await axios.get(
+        "/movie/upcoming"
+      );
+      setonlineStreamEvents(getUpcomingMovies.data.results);
+    };
+    requestUpcomingMovies();
+  }, []);
   return (
     <>
       <HeroCarousel />

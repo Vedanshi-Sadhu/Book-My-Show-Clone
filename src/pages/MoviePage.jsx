@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import MovieLayoutHoc from "../layouts/Movie.layout";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const MoviePage = () => {
+  const { id } = useParams();
+  const [cast, setCast] = useState([]);
+  const [similarMovies, setSimilarMovies] = useState([]);
+
+  useEffect(() => {
+    const requestCast = async () => {
+      const getCast = await axios.get(`/movie/${id}/credits`);
+      setCast(getCast.data.cast);
+    };
+
+    requestCast();
+  }, [id]);
+
+  useEffect(() => {
+    const requestSimilarMovies = async () => {
+      const getSimilarMovies = await axios.get(`/movie/${id}/similar`);
+      setSimilarMovies(getSimilarMovies.data.results);
+    };
+
+    requestSimilarMovies();
+  }, [id]);
+
   return <div>MoviePage</div>;
 };
 
 export default MovieLayoutHoc(MoviePage);
 
 /*
-import React, { useEffect, useState, useContext } from "react";
-import MovieLayoutHoc from "../layout/Movie.layout";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+
+
 import { MovieContext } from "../context/Movie.context";
 import Slider from "react-slick";
 import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
@@ -20,10 +42,10 @@ import MovieHero from "../components/MovieHero/MovieHero.Component";
 import Cast from "../components/Cast/Cast.Component";
 
 const MoviePage = () => {
-  const { id } = useParams();
+ 
   const { movie, setMovie } = useContext(MovieContext);
-  const [cast, setCast] = useState([]);
-  const [similarMovies, setSimilarMovies] = useState([]);
+ 
+ 
   const [recommendedMovies, setRecommendedMovies] = useState([]);
 
   useEffect(() => {

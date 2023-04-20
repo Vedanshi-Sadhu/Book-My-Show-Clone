@@ -1,8 +1,8 @@
-/*
 import React, { createContext, useState } from "react";
 
-export const MovieContext = createContext();
+//we can alter data from any component & access it in any othrer component
 
+export const MovieContext = createContext();
 const MovieProvider = ({ children }) => {
   const [movie, setMovie] = useState({
     id: 0,
@@ -20,4 +20,3 @@ const MovieProvider = ({ children }) => {
 };
 
 export default MovieProvider;
-*/

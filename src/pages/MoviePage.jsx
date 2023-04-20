@@ -2,51 +2,19 @@ import React, { useEffect, useState, useContext } from "react";
 import MovieLayoutHoc from "../layouts/Movie.layout";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { MovieContext } from "../Context/Movie.context";
+import Slider from "react-slick";
+import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
 
+import PosterSlider from "../Components/PosterSlider/PosterSlider.Component";
+import MovieHero from "../Components/MovieHero/MovieHero.Component";
+import Cast from "../Components/Cast/Cast.Component";
 const MoviePage = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
   const [similarMovies, setSimilarMovies] = useState([]);
-
-  useEffect(() => {
-    const requestCast = async () => {
-      const getCast = await axios.get(`/movie/${id}/credits`);
-      setCast(getCast.data.cast);
-    };
-
-    requestCast();
-  }, [id]);
-
-  useEffect(() => {
-    const requestSimilarMovies = async () => {
-      const getSimilarMovies = await axios.get(`/movie/${id}/similar`);
-      setSimilarMovies(getSimilarMovies.data.results);
-    };
-
-    requestSimilarMovies();
-  }, [id]);
-
-  return <div>MoviePage</div>;
-};
-
-export default MovieLayoutHoc(MoviePage);
-
-/*
-
-
-import { MovieContext } from "../context/Movie.context";
-import Slider from "react-slick";
-import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
-import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
-import MovieHero from "../components/MovieHero/MovieHero.Component";
-import Cast from "../components/Cast/Cast.Component";
-
-const MoviePage = () => {
- 
-  const { movie, setMovie } = useContext(MovieContext);
- 
- 
   const [recommendedMovies, setRecommendedMovies] = useState([]);
+  const { movie, setMovie } = useContext(MovieContext);
 
   useEffect(() => {
     const requestCast = async () => {
@@ -202,9 +170,9 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* Cast Slider */
+        {/* Cast Slider */}
 
-/*      <div className="my-8">
+        <div className="my-8">
           <h2 className="text-gray-800 font-bold text-2xl mb-4">
             Cast and Crew
           </h2>
@@ -223,8 +191,8 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */
-/*      <div className="my-8">
+        {/* recommended movies slider */}
+        <div className="my-8">
           <PosterSlider
             config={settings}
             title="Recommended Movies"
@@ -237,8 +205,8 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */
-/*      <PosterSlider
+        {/* recommended movies slider */}
+        <PosterSlider
           config={settings}
           title="BMS XCLUSICE"
           posters={recommendedMovies}
@@ -250,4 +218,3 @@ const MoviePage = () => {
 };
 
 export default MovieLayoutHoc(MoviePage);
-*/

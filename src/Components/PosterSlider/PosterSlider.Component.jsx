@@ -6,7 +6,7 @@ const PosterSlider = (props) => {
   const { posters, title, subtitle, isDark } = props;
 
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 4,
@@ -51,11 +51,10 @@ const PosterSlider = (props) => {
         </p>
       </div>
       <Slider {...settings}>
-        {posters.map((each) => (
-          <Poster {...each} isDark={isDark} />
+        {posters.map((each, index) => (
+          <Poster {...each} isDark={isDark} key={index} />
         ))}
       </Slider>
-      
     </>
   );
 };

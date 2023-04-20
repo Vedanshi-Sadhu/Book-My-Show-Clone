@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //layout hoc
 import DefaultLayoutHoc from "../layouts/Default.layout";
 //components
@@ -6,12 +6,44 @@ import HeroCarousel from "../Components/HeroCarousel/HeroCarousel.Component";
 import PosterSlider from "../Components/PosterSlider/PosterSlider.Component";
 import EntertainmentCard from "../Components/Entertainment/EntertainmentCard.Component";
 
-//import axios from "axios";
+import axios from "axios";
 
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [premierMovies, setpremierMovies] = useState([]);
   const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+
+  useEffect(() => {
+    const requestPopularMovies = async () => {
+      const getPopularMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=8cc3917723a701c28dba34183506b4f5"
+      );
+      setRecommendedMovies(getPopularMovies.data.results);
+    };
+    requestPopularMovies();
+  }, []);
+
+  useEffect(() => {
+    const requestTopratedMovies = async () => {
+      const getTopratedMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=8cc3917723a701c28dba34183506b4f5"
+      );
+      setpremierMovies(getTopratedMovies.data.results);
+    };
+    requestTopratedMovies();
+  }, []);
+
+  useEffect(() => {
+    const requestUpcomingMovies = async () => {
+      const getUpcomingMovies = await axios.get(
+        "https://api.themoviedb.org/3/movie/upcoming?api_key=8cc3917723a701c28dba34183506b4f5"
+      );
+      setonlineStreamEvents(getUpcomingMovies.data.results);
+    };
+    requestUpcomingMovies();
+  }, []);
+
+  //api.themoviedb.org/3/movie/popular?api_key=8cc3917723a701c28dba34183506b4f5
 
   /*
 useEffect(()=>{
@@ -24,7 +56,7 @@ requestPopularMovies();
 
 useEffect(()=>{
   const requestTopratedMovies = async () =>{
-  const getTopratedMovies = await axios.get("/movie/top_rated");
+  const getTopratedMovies = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=8cc3917723a701c28dba34183506b4f5");
   setpremierMovies(getTopratedMovies.data.results);
 };
 requestTopratedMovies();

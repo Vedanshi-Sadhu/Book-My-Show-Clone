@@ -21,8 +21,8 @@ const MovieInfo = () => {
 
   return (
     <>
-      {
-        /*<PaymentModel setIsOpen={setIsOpen} isOpen={isOpen} price={price} />*/
+      
+        <PaymentModel setIsOpen={setIsOpen} isOpen={isOpen} price={price} />
         <div className="flex flex-col gap-8">
           <h1 className="text-white text-5xl font-bold">
             {movie.original_title}
@@ -51,7 +51,7 @@ const MovieInfo = () => {
             </button>
           </div>
         </div>
-      }
+      
     </>
   );
 };

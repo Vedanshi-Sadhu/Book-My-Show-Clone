@@ -3,7 +3,7 @@ import Poster from "../Poster/Poster.Component";
 import Slider from "react-slick";
 
 const PosterSlider = (props) => {
-  const { posters, title, subtitle, isDark } = props;
+  const { posters, title, subtitle, isDark, config } = props;
 
   const settings = {
     infinite: true,
@@ -50,11 +50,28 @@ const PosterSlider = (props) => {
           {subtitle}
         </p>
       </div>
-      <Slider {...settings}>
+      {/*<Slider {...settings}>
         {posters.map((each, index) => (
           <Poster {...each} isDark={isDark} key={index} />
         ))}
-      </Slider>
+        </Slider>*/}
+      {config && (
+        <Slider {...config}>
+          {posters.map((each, index) => (
+            <Poster {...each} isDark={isDark} key={index} />
+          ))}
+          {/* <Poster /> */}
+        </Slider>
+      )}
+
+      {!config && (
+        <Slider {...settings}>
+          {posters.map((each, index) => (
+            <Poster {...each} isDark={isDark} key={index} />
+          ))}
+          {/* <Poster /> */}
+        </Slider>
+      )}
     </>
   );
 };

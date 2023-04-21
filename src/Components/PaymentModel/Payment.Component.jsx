@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 const PaymentModel = ({ setIsOpen, isOpen, price }) => {
   const closeModal = () => {
@@ -62,9 +61,10 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
                   >
                     Please make a payment
                   </Dialog.Title>
+
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Hello please click non the below button to make a payment.
+                      Hello please click on the below button to make a payment.
                     </p>
                   </div>
 
@@ -76,9 +76,10 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
                     >
                       Pay ₹{price}
                     </button>
+
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
                       Cancle Payment
@@ -95,5 +96,3 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
 };
 
 export default PaymentModel;
-
-

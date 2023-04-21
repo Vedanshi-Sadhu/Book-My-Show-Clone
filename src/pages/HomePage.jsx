@@ -13,44 +13,11 @@ const HomePage = () => {
   const [premierMovies, setpremierMovies] = useState([]);
   const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
 
-  /*
-  useEffect(() => {
-    const requestPopularMovies = async () => {
-      const getPopularMovies = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=8cc3917723a701c28dba34183506b4f5"
-      );
-      setRecommendedMovies(getPopularMovies.data.results);
-    };
-    requestPopularMovies();
-  }, []);
-
-  useEffect(() => {
-    const requestTopratedMovies = async () => {
-      const getTopratedMovies = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=8cc3917723a701c28dba34183506b4f5"
-      );
-      setpremierMovies(getTopratedMovies.data.results);
-    };
-    requestTopratedMovies();
-  }, []);
-
-  useEffect(() => {
-    const requestUpcomingMovies = async () => {
-      const getUpcomingMovies = await axios.get(
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=8cc3917723a701c28dba34183506b4f5"
-      );
-      setonlineStreamEvents(getUpcomingMovies.data.results);
-    };
-    requestUpcomingMovies();
-  }, []);
-*/
   //api.themoviedb.org/3/movie/popular?api_key=8cc3917723a701c28dba34183506b4f5
 
   useEffect(() => {
     const requestPopularMovies = async () => {
-      const getPopularMovies = await axios.get(
-        "/movie/popular"
-      );
+      const getPopularMovies = await axios.get("/movie/popular");
       setRecommendedMovies(getPopularMovies.data.results);
     };
     requestPopularMovies();
@@ -58,9 +25,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const requestTopratedMovies = async () => {
-      const getTopratedMovies = await axios.get(
-        "/movie/top_rated"
-      );
+      const getTopratedMovies = await axios.get("/movie/top_rated");
       setpremierMovies(getTopratedMovies.data.results);
     };
     requestTopratedMovies();
@@ -68,9 +33,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const requestUpcomingMovies = async () => {
-      const getUpcomingMovies = await axios.get(
-        "/movie/upcoming"
-      );
+      const getUpcomingMovies = await axios.get("/movie/upcoming");
       setonlineStreamEvents(getUpcomingMovies.data.results);
     };
     requestUpcomingMovies();

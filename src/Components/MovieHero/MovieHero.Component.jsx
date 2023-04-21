@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-//import { MovieContext } from "../../context/Movie.context";
+import { MovieContext } from "../../Context/Movie.context";
 import MovieInfo from "./MovieInfo.Component";
-import { MovieContext } from "./Movie.Context";
 
 const MovieHero = () => {
   const { movie } = useContext(MovieContext);
   const genres = movie.genres?.map(({ name }) => name).join(", ");
-  // console.log(genres);
+  console.log(genres);
 
   return (
     <>

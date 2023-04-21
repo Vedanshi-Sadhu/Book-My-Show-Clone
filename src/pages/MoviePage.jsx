@@ -9,6 +9,7 @@ import { FaCcVisa, FaCcApplePay } from "react-icons/fa";
 import PosterSlider from "../Components/PosterSlider/PosterSlider.Component";
 import MovieHero from "../Components/MovieHero/MovieHero.Component";
 import Cast from "../Components/Cast/Cast.Component";
+
 const MoviePage = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
@@ -36,9 +37,7 @@ const MoviePage = () => {
 
   useEffect(() => {
     const requestRecommendedMovies = async () => {
-      const getRecommendedMovies = await axios.get(
-        `/movie/${id}/recommendations`
-      );
+      const getRecommendedMovies = await axios.get("/movie/popular"); //`/movie/${id}/recommendations`
       setRecommendedMovies(getRecommendedMovies.data.results);
     };
 
@@ -122,7 +121,7 @@ const MoviePage = () => {
   return (
     <>
       <MovieHero />
-      <div className="my-12 container px-4 lg-ml-20 lg:w-2/3">
+      <div className="my-12 container px-4 lg-ml-20 lg:w-full">
         <div className="flex flex-col items-start gap-3">
           <h1 className="text-gray-800 font-bold text-2xl">About the movie</h1>
           <p>{movie.overview}</p>
@@ -216,5 +215,4 @@ const MoviePage = () => {
     </>
   );
 };
-
 export default MovieLayoutHoc(MoviePage);

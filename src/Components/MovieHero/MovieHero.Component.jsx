@@ -5,7 +5,7 @@ import MovieInfo from "./MovieInfo.Component";
 const MovieHero = () => {
   const { movie } = useContext(MovieContext);
   const genres = movie.genres?.map(({ name }) => name).join(", ");
-  console.log(genres);
+  //console.log(genres);
 
   return (
     <>

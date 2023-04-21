@@ -1,4 +1,4 @@
-/*
+
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
@@ -96,4 +96,4 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
 
 export default PaymentModel;
 
-*/
+

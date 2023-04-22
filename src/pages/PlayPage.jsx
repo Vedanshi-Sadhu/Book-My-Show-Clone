@@ -65,7 +65,7 @@ const PlayPage = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/4 p-4 bg-white rounded">
+        <div className="lg:w-2/5 p-4 bg-white rounded">
           <h2 className="text-2xl font-bold mb-4">Filters</h2>
           <div>
             <PlayFilters

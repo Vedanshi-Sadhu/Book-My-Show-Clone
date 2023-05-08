@@ -2,7 +2,7 @@
 
 import React from "react";
 import Navbar from "../Components/Navbar.Component";
-import Footer from "../Components/footer";
+
 const DefaultLayoutHoc =
   (Component) =>
   ({ ...props }) => {

@@ -10,7 +10,7 @@ const DefaultLayoutHoc =
       <div>
         <Navbar />
         <Component {...props} />
-        <div>Footer</div>
+        <div></div>
       </div>
     );
   };
